@@ -20,7 +20,8 @@
     unstable_features,
     unused_import_braces,
     missing_debug_implementations,
-    missing_docs
+    missing_docs,
+    clippy::explicit_iter_loop
 )]
 
 #[cfg(not(any(feature = "runtime-tokio", feature = "runtime-async-std")))]
