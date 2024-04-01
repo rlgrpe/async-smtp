@@ -1,12 +1,11 @@
 [package]
-
 name = "async-smtp"
 version = "0.9.0"
 description = "SMTP client"
 readme = "README.md"
 homepage = "https://github.com/async-email/async-smtp"
 repository = "https://github.com/async-email/async-smtp"
-license = "Apache-2.0/MIT"
+license = "MIT OR Apache-2.0"
 authors = ["dignifiedquire <me@dignifiedquire.com>"]
 categories = ["email"]
 keywords = ["email", "smtp", "mailer"]
