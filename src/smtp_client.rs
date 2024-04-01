@@ -262,7 +262,7 @@ impl<S: BufRead + Write + Unpin> SmtpTransport<S> {
             // Log the message
             debug!(
                 "status=sent ({})",
-                result.message.get(0).unwrap_or(&"no response".to_string())
+                result.message.first().unwrap_or(&"no response".to_string())
             );
         }
 
