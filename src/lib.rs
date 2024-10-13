@@ -43,6 +43,7 @@ pub mod util;
 pub use crate::smtp_client::{SmtpClient, SmtpTransport};
 pub use types::*;
 
+/// Asynchronous test using tokio or async-std depending on the configuration.
 #[cfg(test)]
 #[macro_export]
 macro_rules! async_test {
