@@ -128,7 +128,7 @@ impl<S: BufRead + Write + Unpin> SmtpTransport<S> {
         &mut self.stream
     }
 
-    /// Gets a reference to the underlying `SmtpStream``.
+    /// Gets a reference to the underlying `SmtpStream`.
     pub fn get_ref(&mut self) -> &SmtpStream<S> {
         &self.stream
     }
