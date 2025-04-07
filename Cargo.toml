@@ -20,7 +20,7 @@ is-it-maintained-open-issues = { repository = "async-email/async-smtp" }
 pin-project = "1"
 anyhow = "1"
 async-std = { version = "1.11", features = ["unstable"], optional = true }
-base64 = "^0.13"
+base64 = "0.22.1"
 futures = "0.3.21"
 log = "^0.4"
 nom = "^7.0"

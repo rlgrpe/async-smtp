@@ -5,6 +5,7 @@ use crate::error::Error;
 use crate::extension::{ClientId, MailParameter, RcptParameter};
 use crate::response::Response;
 use crate::EmailAddress;
+use base64::Engine as _;
 use log::debug;
 use std::convert::AsRef;
 use std::fmt::{self, Display, Formatter};
@@ -208,7 +209,7 @@ impl Display for AuthCommand {
         let encoded_response = self
             .response
             .as_ref()
-            .map(|r| base64::encode_config(r.as_bytes(), base64::STANDARD));
+            .map(|r| base64::engine::general_purpose::STANDARD.encode(r.as_bytes()));
 
         if self.mechanism.supports_initial_response() {
             write!(
@@ -263,7 +264,9 @@ impl AuthCommand {
             .ok_or(Error::ResponseParsing("Could not read auth challenge"))?;
         debug!("auth encoded challenge: {}", encoded_challenge);
 
-        let decoded_challenge = String::from_utf8(base64::decode(encoded_challenge)?)?;
+        let decoded_challenge = String::from_utf8(
+            base64::engine::general_purpose::STANDARD.decode(encoded_challenge)?,
+        )?;
         debug!("auth decoded challenge: {}", decoded_challenge);
 
         let response = Some(mechanism.response(&credentials, Some(decoded_challenge.as_ref()))?);
