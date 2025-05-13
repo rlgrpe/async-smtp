@@ -162,7 +162,7 @@ dependencies = [
 
 [[package]]
 name = "async-smtp"
-version = "0.10.1"
+version = "0.10.2"
 dependencies = [
  "anyhow",
  "async-std",
