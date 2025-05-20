@@ -95,7 +95,7 @@ impl<S: BufRead + Write + Unpin> SmtpStream<S> {
             }
         }
 
-        Err(std::io::Error::new(std::io::ErrorKind::Other, "incomplete").into())
+        Err(std::io::Error::other("incomplete").into())
     }
 
     /// Sends the message content.

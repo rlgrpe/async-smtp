@@ -103,6 +103,6 @@ mod test {
                 "For explanation visit https://www.gmx.net/mail/senderguidelines?c=bl".to_string(),
             ],
         ));
-        assert_eq!(format!("{}", err), "permanent: gmx.net (mxgmx117) Nemesis ESMTP Service not available; No SMTP service; IP address is block listed.; For explanation visit https://www.gmx.net/mail/senderguidelines?c=bl".to_string());
+        assert_eq!(format!("{err}"), "permanent: gmx.net (mxgmx117) Nemesis ESMTP Service not available; No SMTP service; IP address is block listed.; For explanation visit https://www.gmx.net/mail/senderguidelines?c=bl".to_string());
     }
 }

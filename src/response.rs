@@ -336,7 +336,7 @@ mod test {
         let res = parse_response(raw_response);
         match res {
             Err(nom::Err::Incomplete(_)) => {}
-            _ => panic!("Expected incomplete response, got {:?}", res),
+            _ => panic!("Expected incomplete response, got {res:?}"),
         }
     }
 
