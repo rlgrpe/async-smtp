@@ -59,10 +59,6 @@ impl<S: BufRead + Write + Unpin> SmtpStream<S> {
         self.inner.write_all(string).await?;
         self.inner.flush().await?;
 
-        debug!(
-            ">> {}",
-            escape_crlf(String::from_utf8_lossy(string).as_ref())
-        );
         Ok(())
     }
 
