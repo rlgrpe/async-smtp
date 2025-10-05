@@ -99,7 +99,7 @@ impl<S: BufRead + Write + Unpin> SmtpStream<S> {
     }
 
     /// Sends the message content.
-    pub(crate) async fn message<T: Read + Unpin>(&mut self, message: T) -> SmtpResult {
+    pub async fn message<T: Read + Unpin>(&mut self, message: T) -> SmtpResult {
         let mut codec = ClientCodec::new();
 
         let mut message_reader = BufReader::new(message);
